@@ -1,6 +1,6 @@
 # Gestão do Projeto
 
-Um parágrafo da descrição do projeto vai aqui
+Sistema com um gerenciamento de produtos e categorias, onde cada categoria tem uma taxa de imposto que srá calculado após realizar a venda, usando Php puro!
 
 ## 🚀 Começando
 
