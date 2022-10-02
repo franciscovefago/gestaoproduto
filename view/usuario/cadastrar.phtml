@@ -1,0 +1,46 @@
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-6">
+            <h2>Cadastrar Usuario</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a href="?page={page}" class="text-success" title="Cadastrar Novo">
+                <i class="fa fa-arrow-left fa-3x" aria-hidden="true" title="VOLTAR"></i>
+            </a>
+        </div>
+    </div>
+    <hr>
+    <div class="alert alert-warning text-center" style="display:{displayvalid};">
+        {textvalid}
+    </div>
+    <div class="alert alert-warning text-center" style="display:{display};">
+        Existe um Usuario utilizando este email
+    </div>
+    <div class="container">
+        <form action="" method="POST">
+        <input type="hidden" name="usuario_id" value="{usuario_id}">
+            <div class="mb-3">
+                <label for="usuario_nome" class="form-label">Nome usuario</label>
+                <input type="text" class="form-control" name="usuario_nome" id="usuario_nome" value="{usuario_nome}" required>
+            </div>
+            <div class="mb-3">
+                <label for="usuario_email" class="form-label">Email</label>
+                <input type="email" class="form-control" name="usuario_email" id="usuario_email" value="{usuario_email}" required>
+            </div>
+            <div class="mb-3">
+                <label for="usuario_senha" class="form-label">Senha</label>
+                <input type="text" class="form-control" name="usuario_senha" id="usuario_senha" value="">
+            </div>
+            <div class="mb-3">
+                <label for="usuario_senha" class="form-label">Status</label>
+
+                <select class="form-control form-select" name="usuario_ativo" required>
+                    <option value="Ativo" {Ativo}>Ativo</option>
+                    <option value="Desativado" {Desativado}>Desativado</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+<script type="text/javascript" src="js/jquery.priceformat.min.js"></script>
+<script src="js/jquery.maskedinput.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        //Mascara de Data
+        $('.date').mask('99/99/9999');
+
+        //Mascara de dinheiro
+        $('.price').priceFormat({
+            prefix: '',
+            centsSeparator: ',',
+            thousandsSeparator: '.'
+        });
+
+        //Input porcentagem
+        $('.percent').on('keyup', function(event) {
+            var valorMaximo = 10000;
+            
+            
+            if ($(this).val().replace('.', '') > valorMaximo) {
+                return event.target.value = '10000';
+            }
+        });
+        $('.percent').priceFormat({
+            prefix: '',
+            centsSeparator: '.',
+            limit: 5,
+            centsLimit: 2
+        });
+    });
+</script>
+
+
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-6">
+            <h2>Cadastrar Categoria de Produto</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a href="?page={page}" class="text-success" title="Cadastrar Novo">
+                <i class="fa fa-arrow-left fa-3x" aria-hidden="true" title="VOLTAR"></i>
+            </a>
+        </div>
+    </div>
+    <hr>
+
+    <div class="alert alert-warning text-center" style="display:{displayvalid};">
+        {textvalid}
+    </div>
+    <div class="container">
+        <form action="" method="POST" class="row">
+            <input type="hidden" name="categoria_produto_id" value="{categoria_produto_id}">
+            <div class="mb-3 col-6">
+                <label for="categoria_produto_nome" class="form-label">Nome</label>
+                <input type="text" class="form-control " name="categoria_produto_nome" id="categoria_produto_nome" value="{categoria_produto_nome}" required>
+            </div>
+            
+            <div class="mb-3 col-6">
+                <label for="categoria_produto_imposto" class="form-label">Percentual de Imposto(%)</label>
+                <input type="text" class="form-control percent" name="categoria_produto_imposto" id="categoria_produto_imposto" value="{categoria_produto_imposto}" required>
+            </div>
+            
+
+
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+</div>

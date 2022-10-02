@@ -1,0 +1,38 @@
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-6">
+            <h2>Informações da Venda</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a href="?page={page}" class="text-success" title="Cadastrar Novo">
+                <i class="fa fa-arrow-left fa-3x" aria-hidden="true" title="VOLTAR"></i>
+            </a>
+        </div>
+    </div>
+    <hr>
+
+
+    <div class="container">
+        <div class="card p-3">
+            <h5>Observações sobre a venda: {venda_obs}</h5>
+        </div>
+        <div class="row">
+            {cardprodutos}
+        </div>
+        <div class="row">
+            <div class="card">
+                <div class="card-body row text-center">
+                    <div class="col-4">
+                        <b>Valor Total Produtos: </b> R$:{totalprodutos}
+                    </div>
+                    <div class="col-4">
+                        <b>Valor Total Impostos: </b> R$:{totalimpostos}
+                    </div>
+                    <div class="col-4">
+                        <b>SubTotal: </b> R$:{subtotal}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

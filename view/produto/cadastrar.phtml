@@ -1,0 +1,58 @@
+<script src="js/jquery.priceformat.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#produto_valor').priceFormat({
+            prefix: '',
+            centsSeparator: ',',
+            thousandsSeparator: '.'
+        });
+    });
+</script>
+
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-6">
+            <h2>Cadastrar Produto</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a href="?page={page}" class="text-success" title="Cadastrar Novo">
+                <i class="fa fa-arrow-left fa-3x" aria-hidden="true" title="VOLTAR"></i>
+            </a>
+        </div>
+    </div>
+    <hr>
+
+    <div class="alert alert-warning text-center" style="display:{displayvalid};">
+        {textvalid}
+    </div>
+    <div class="container">
+        <form action="" method="POST" class="row">
+            <input type="hidden" name="produto_id" value="{produto_id}">
+            <div class="mb-3 col-6">
+                <label for="categoria_produto_id" class="form-label">Categoria Produto</label>
+                <select class="form-control form-select" name='categoria_produto_id'>
+                    <option value="">Selecione a Categoria</option>
+                    {optioncategoria}
+                </select>
+            </div>
+
+            <div class="mb-3 col-6">
+                <label for="produto_nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" name="produto_nome" id="produto_nome" value="{produto_nome}" required>
+            </div>
+            <div class="mb-3 col-6">
+                <label for="produto_valor" class="form-label">Valor</label>
+                <input type="text" class="form-control" name="produto_valor" id="produto_valor" value="{produto_valor}" required>
+            </div>
+            <div class="mb-3 col-6">
+                <label for="produto_status" class="form-label">Status</label>
+
+                <select class="form-control form-select" name="produto_status" required>
+                    <option value="Ativo" {Ativo}>Ativo</option>
+                    <option value="Desativado" {Desativado}>Desativado</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+</div>
